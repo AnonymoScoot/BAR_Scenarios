@@ -1,22 +1,22 @@
 local scenariodata = {
-	index             = 31,                        --  integer, sort order, MUST BE EQUAL TO FILENAME NUMBER
-	scenarioid        = "hooked01",                -- no spaces, lowercase, this will be used to save the score and can be used gadget side
-	version           = "1",                       -- increment this to reset the score when changing a mission, as scores are keyed by (scenarioid,version,difficulty)
-	title             = "Yin and Yang",            -- can be anything
+	index             = 31,                                 --  integer, sort order, MUST BE EQUAL TO FILENAME NUMBER
+	scenarioid        = "tickonly01",                       -- no spaces, lowercase, this will be used to save the score and can be used gadget side
+	version           = "1",                                -- increment this to reset the score when changing a mission, as scores are keyed by (scenarioid,version,difficulty)
+	title             = "Tick for Tack",                    -- can be anything
 	isnew             = true,
-	author            = "AnonymoScoot",            -- your name here
-	imagepath         = "scenario032.jpg",         -- placed next to lua file, should be 3:1 ratio banner style
-	imageflavor       = "When two opposites collide", -- This text will be drawn over image
+	author            = "AnonymoScoot",                     -- your name here
+	imagepath         = "scenario032.jpg",                  -- placed next to lua file, should be 3:1 ratio banner style
+	imageflavor       = "I've got this itch I cannot scratch", -- This text will be drawn over image
 	summary           =
-	[[You are matched against an opponent in a small arena with a twist. Your opponent can't build air or hovercraft units, but you can't build bot or vehicle units.]],
+	[[Fight against an army of robots with nothing but ticks.]],
 	briefing          =
-	[[You have access to air and hovercraft units, but can't build bot or vehicle units. The enemy commander has access to bot and vehicle units, but can't build air or hovercraft units. Everything else remains unchanged.
+	[[You are limited to construction and support bot units, together with the only combat unit: tick. Build defenses quickly, hold your position, and make an overwhelming army of ticks.
 
 Tips:
- - Try to use the air transport units to your advantage to quickly get your commander to the high ground.
- - Don't forget to reinforce the choke points with static defenses.
- - Early bombers can be used to delay the enemy getting too powerful.
- - Aircraft is weak to anti-air, switch to hovercraft when the enemy has too many anti-air units.
+ - Ticks are fast and cheap, but weak. Build a couple of them first, then mass produce them.
+ - You are able to build static defenses, which are strong, but weak to long range artillery.
+ - You have access to anti-air bots, if the situation demands it.
+ - The enemy will go easy on you first, but don't let them get too far into the tech tree.
 
 Scoring:
  - Time taken to complete the scenario.
@@ -30,14 +30,14 @@ The difficulty modifier will change the amount of resources you and the enemy re
  - Brutal: Regular resources for you, +100% for the enemy
  ]],
 
-	mapfilename       = "Hooked 1.1.1", -- the name of the map to be displayed here, and which to play on, no .smf ending needed
-	playerstartx      = "5%",        -- X position of where player comm icon should be drawn, from top left of the map
-	playerstarty      = "45%",       -- Y position of where player comm icon should be drawn, from top left of the map
-	partime           = 1200,        -- par time in seconds (time a mission is expected to take on average)
-	parresources      = 50000,       -- par resource amount (amount of metal one is expected to spend on mission)
-	difficulty        = 4,           -- Percieved difficulty at 'normal' level: integer 1-10
-	defaultdifficulty = "Normal",    -- an entry of the difficulty table
-	difficulties      = {            -- Array for sortedness, Keys are text that appears in selector (as well as in scoring!), values are handicap levels
+	mapfilename       = "Fallendell_V4", -- the name of the map to be displayed here, and which to play on, no .smf ending needed
+	playerstartx      = "5%",         -- X position of where player comm icon should be drawn, from top left of the map
+	playerstarty      = "15%",        -- Y position of where player comm icon should be drawn, from top left of the map
+	partime           = 2400,         -- par time in seconds (time a mission is expected to take on average)
+	parresources      = 100000,       -- par resource amount (amount of metal one is expected to spend on mission)
+	difficulty        = 5,            -- Percieved difficulty at 'normal' level: integer 1-10
+	defaultdifficulty = "Normal",     -- an entry of the difficulty table
+	difficulties      = {             -- Array for sortedness, Keys are text that appears in selector (as well as in scoring!), values are handicap levels
 		-- handicap values range [-100 - +100], with 0 being regular resources
 		-- Currently difficulty modifier only affects the resource bonuses
 		{ name = "Beginner", playerhandicap = 50, enemyhandicap = -50 },
@@ -52,25 +52,30 @@ The difficulty modifier will change the amount of resources you and the enemy re
 	unitlimits        = {                             -- table of unitdefname : maxnumberoftese units, 0 is disable it
 		-- dont use the one in startscript, put it here!
 		armsy = 0,
-		armasy = 0,
 		armvp = 0,
-		armavp = 0,
-		armlab = 0,
-		armalab = 0,
-		armshltx = 0,
+		armap = 0,
+		armhp = 0,
 		armshltxuw = 0,
-		corhp = 0,
-		corfhp = 0,
-		corplat = 0,
-		corap = 0,
-		coraap = 0,
-		coramsub = 0,
-
+		armshltx = 0,
+		armpw = 0,
+		armwar = 0,
+		armham = 0,
+		armrock = 0,
+		armsptk = 0,
+		armzeus = 0,
+		armspid = 0,
+		armmav = 0,
+		armfast = 0,
+		armvader = 0,
+		armsnipe = 0,
+		armamph = 0,
+		armfido = 0,
+		armfboy = 0,
 	},
 
 	scenariooptions   = {      -- this will get lua->json->base64 and passed to scenariooptions in game
 		myoption = "dostuff",  -- blank
-		scenarioid = "hooked01", -- this MUST be present and identical to the one defined at start
+		scenarioid = "tickonly01", -- this MUST be present and identical to the one defined at start
 		disablefactionpicker = true, -- this is needed to prevent faction picking outside of the allowedsides
 
 		unitloadout = {
@@ -133,7 +138,7 @@ The difficulty modifier will change the amount of resources you and the enemy re
 	{
 		startrectright = 1;
 		startrectbottom = 1;
-		startrectleft = 0.8;
+		startrectleft = 0.80000001;
 		numallies = 0;
 		startrecttop = 0;
 	}
@@ -142,10 +147,10 @@ The difficulty modifier will change the amount of resources you and the enemy re
 	{
 		Host = 0;
 		IsFromDemo = 0;
+		Name = SimpleAI(1);
+		ShortName = SimpleAI;
 		Team = 1;
-		Name = BARbarianAI;
-		ShortName = BARb;
-		Version = stable;
+		Version = <not-versioned>;
 	}
 
 	NumRestrictions=__NUMRESTRICTIONS__;
