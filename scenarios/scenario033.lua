@@ -1,12 +1,12 @@
 local scenariodata = {
-	index             = 31,                                 --  integer, sort order, MUST BE EQUAL TO FILENAME NUMBER
-	scenarioid        = "tickonly01",                       -- no spaces, lowercase, this will be used to save the score and can be used gadget side
-	version           = "1",                                -- increment this to reset the score when changing a mission, as scores are keyed by (scenarioid,version,difficulty)
-	title             = "Tick for Tack",                    -- can be anything
+	index             = 31,                                           --  integer, sort order, MUST BE EQUAL TO FILENAME NUMBER
+	scenarioid        = "tickonly01",                                 -- no spaces, lowercase, this will be used to save the score and can be used gadget side
+	version           = "1",                                          -- increment this to reset the score when changing a mission, as scores are keyed by (scenarioid,version,difficulty)
+	title             = "Tick for Tack",                              -- can be anything
 	isnew             = true,
-	author            = "AnonymoScoot",                     -- your name here
-	imagepath         = "scenario033.jpg",                  -- placed next to lua file, should be 3:1 ratio banner style
-	imageflavor       = "I've got this itch I cannot scratch", -- This text will be drawn over image
+	author            = "AnonymoScoot",                               -- your name here
+	imagepath         = "scenario033.jpg",                            -- placed next to lua file, should be 3:1 ratio banner style
+	imageflavor       = "I've got these ticks and I can't control them", -- This text will be drawn over image
 	summary           =
 	[[Fight against an army of robots with nothing but ticks.]],
 	briefing          =

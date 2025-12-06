@@ -37,7 +37,7 @@ The difficulty modifier will change the amount of resources you and the enemy re
 	playerstartx      = "45%",          -- X position of where player comm icon should be drawn, from top left of the map
 	playerstarty      = "45%",          -- Y position of where player comm icon should be drawn, from top left of the map
 	partime           = 5400,           -- par time in seconds (time a mission is expected to take on average)
-	parresources      = 1000000,        -- par resource amount (amount of metal one is expected to spend on mission)
+	parresources      = 5000000,        -- par resource amount (amount of metal one is expected to spend on mission)
 	difficulty        = 6,              -- Percieved difficulty at 'normal' level: integer 1-10
 	defaultdifficulty = "Normal",       -- an entry of the difficulty table
 	difficulties      = {               -- Array for sortedness, Keys are text that appears in selector (as well as in scoring!), values are handicap levels
