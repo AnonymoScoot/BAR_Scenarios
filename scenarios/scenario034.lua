@@ -1,22 +1,22 @@
 local scenariodata = {
 	index             = 31,                                 --  integer, sort order, MUST BE EQUAL TO FILENAME NUMBER
-	scenarioid        = "tickonly01",                       -- no spaces, lowercase, this will be used to save the score and can be used gadget side
+	scenarioid        = "greatdividefriend01",              -- no spaces, lowercase, this will be used to save the score and can be used gadget side
 	version           = "1",                                -- increment this to reset the score when changing a mission, as scores are keyed by (scenarioid,version,difficulty)
-	title             = "Tick for Tack",                    -- can be anything
+	title             = "Wingman",                          -- can be anything
 	isnew             = true,
 	author            = "AnonymoScoot",                     -- your name here
-	imagepath         = "scenario033.jpg",                  -- placed next to lua file, should be 3:1 ratio banner style
-	imageflavor       = "I've got this itch I cannot scratch", -- This text will be drawn over image
+	imagepath         = "scenario034.jpg",                  -- placed next to lua file, should be 3:1 ratio banner style
+	imageflavor       = "A friend in need is a friend indeed", -- This text will be drawn over image
 	summary           =
-	[[Fight against an army of robots with nothing but ticks.]],
+	[[One of your rookie buddies has challenged an enemy commander to a fight. They asked you for help to even the playing field.]],
 	briefing          =
-	[[You are limited to construction and support bot units, together with the only combat unit: tick. Build defenses quickly, hold your position, and make an overwhelming army of ticks.
+	[[You're paired with a less experienced allied commander against a hostile foe. Your partner's understanding of the battlefield is pretty limited, but they are trying their best. Provide support and eliminate the Barbarian commander.
 
 Tips:
- - Ticks are fast and cheap, but weak. Build a couple of them first, then mass produce them.
- - You are able to build static defenses, which are strong, but weak to long range artillery.
- - You have access to anti-air bots, if the situation demands it.
- - The enemy will go easy on you first, but don't let them get too far into the tech tree.
+ - There is a single chokepoint in the center of the map, reinforce it and provide a little more breathing room for your buddy.
+ - The enemy commander is more experienced than your allied commander, so don't depend on him too much.
+ - If your ally builds something you don't like, you can reclaim their buildings and get the metal back.
+ - If you stall your opponent for enough time, your buddy might use the opportunity to build a large army and overpower the enemy.
 
 Scoring:
  - Time taken to complete the scenario.
@@ -30,14 +30,14 @@ The difficulty modifier will change the amount of resources you and the enemy re
  - Brutal: Regular resources for you, +100% for the enemy
  ]],
 
-	mapfilename       = "Fallendell_V4", -- the name of the map to be displayed here, and which to play on, no .smf ending needed
-	playerstartx      = "5%",         -- X position of where player comm icon should be drawn, from top left of the map
-	playerstarty      = "15%",        -- Y position of where player comm icon should be drawn, from top left of the map
-	partime           = 2400,         -- par time in seconds (time a mission is expected to take on average)
-	parresources      = 100000,       -- par resource amount (amount of metal one is expected to spend on mission)
-	difficulty        = 5,            -- Percieved difficulty at 'normal' level: integer 1-10
-	defaultdifficulty = "Normal",     -- an entry of the difficulty table
-	difficulties      = {             -- Array for sortedness, Keys are text that appears in selector (as well as in scoring!), values are handicap levels
+	mapfilename       = "Great Divide V1", -- the name of the map to be displayed here, and which to play on, no .smf ending needed
+	playerstartx      = "45%",          -- X position of where player comm icon should be drawn, from top left of the map
+	playerstarty      = "15%",          -- Y position of where player comm icon should be drawn, from top left of the map
+	partime           = 2400,           -- par time in seconds (time a mission is expected to take on average)
+	parresources      = 100000,         -- par resource amount (amount of metal one is expected to spend on mission)
+	difficulty        = 3,              -- Percieved difficulty at 'normal' level: integer 1-10
+	defaultdifficulty = "Normal",       -- an entry of the difficulty table
+	difficulties      = {               -- Array for sortedness, Keys are text that appears in selector (as well as in scoring!), values are handicap levels
 		-- handicap values range [-100 - +100], with 0 being regular resources
 		-- Currently difficulty modifier only affects the resource bonuses
 		{ name = "Beginner", playerhandicap = 50, enemyhandicap = -50 },
@@ -46,37 +46,17 @@ The difficulty modifier will change the amount of resources you and the enemy re
 		{ name = "Hard",     playerhandicap = 0,  enemyhandicap = 50 },
 		{ name = "Brutal",   playerhandicap = 0,  enemyhandicap = 100 },
 	},
-	allowedsides      = { "Armada" },                 --these are the permitted factions for this mission, choose from {"Armada", "Cortex", "Random"}
-	victorycondition  = "Kill all enemy Commanders",  -- This is plaintext, but should be reflected in startscript
+	allowedsides      = { "Armada", "Cortex", "Random" }, --these are the permitted factions for this mission, choose from {"Armada", "Cortex", "Random"}
+	victorycondition  = "Kill all enemy Commanders",   -- This is plaintext, but should be reflected in startscript
 	losscondition     = "Loss of all allied Commanders", -- This is plaintext, but should be reflected in startscript
-	unitlimits        = {                             -- table of unitdefname : maxnumberoftese units, 0 is disable it
+	unitlimits        = {                              -- table of unitdefname : maxnumberoftese units, 0 is disable it
 		-- dont use the one in startscript, put it here!
-		armsy = 0,
-		armvp = 0,
-		armap = 0,
-		armhp = 0,
-		armshltxuw = 0,
-		armshltx = 0,
-		armpw = 0,
-		armwar = 0,
-		armham = 0,
-		armrock = 0,
-		armsptk = 0,
-		armzeus = 0,
-		armspid = 0,
-		armmav = 0,
-		armfast = 0,
-		armvader = 0,
-		armsnipe = 0,
-		armamph = 0,
-		armfido = 0,
-		armfboy = 0,
 	},
 
-	scenariooptions   = {      -- this will get lua->json->base64 and passed to scenariooptions in game
-		myoption = "dostuff",  -- blank
-		scenarioid = "tickonly01", -- this MUST be present and identical to the one defined at start
-		disablefactionpicker = true, -- this is needed to prevent faction picking outside of the allowedsides
+	scenariooptions   = {             -- this will get lua->json->base64 and passed to scenariooptions in game
+		myoption = "dostuff",         -- blank
+		scenarioid = "greatdividefriend01", -- this MUST be present and identical to the one defined at start
+		disablefactionpicker = true,  -- this is needed to prevent faction picking outside of the allowedsides
 
 		unitloadout = {
 		},
@@ -109,25 +89,35 @@ The difficulty modifier will change the amount of resources you and the enemy re
 {
 	[allyTeam0]
 	{
-		startrectright = 0.2;
-		startrectbottom = 1;
+		startrectright = 1;
+		startrectbottom = 0.2;
 		startrectleft = 0;
 		numallies = 0;
 		startrecttop = 0;
 	}
 
+	[ai1]
+	{
+		Host = 0;
+		IsFromDemo = 0;
+		Name = BARbarianAI(1);
+		ShortName = BARb;
+		Team = 2;
+		Version = stable;
+	}
+
 	[team1]
 	{
-		Side = Cortex;
-		Handicap = __ENEMYHANDICAP__;
+		Side = Random;
+		Handicap = __PLAYERHANDICAP__;
 		RgbColor = 0.99609375 0.546875 0;
-		AllyTeam = 1;
+		AllyTeam = 0;
 		TeamLeader = 0;
 	}
 
 	[team0]
 	{
-		Side = Armada;
+		Side = __PLAYERSIDE__;
 		Handicap = __PLAYERHANDICAP__;
 		RgbColor = 0.99609375 0.546875 0;
 		AllyTeam = 0;
@@ -138,16 +128,25 @@ The difficulty modifier will change the amount of resources you and the enemy re
 	{
 		startrectright = 1;
 		startrectbottom = 1;
-		startrectleft = 0.80000001;
+		startrectleft = 0;
 		numallies = 0;
-		startrecttop = 0;
+		startrecttop = 0.80000001;
+	}
+
+	[team2]
+	{
+		Side = Random;
+		Handicap = __ENEMYHANDICAP__;
+		RgbColor = 0.99609375 0.546875 0;
+		AllyTeam = 1;
+		TeamLeader = 0;
 	}
 
 	[ai0]
 	{
 		Host = 0;
 		IsFromDemo = 0;
-		Name = SimpleAI(1);
+		Name = SimpleAI(2);
 		ShortName = SimpleAI;
 		Team = 1;
 		Version = <not-versioned>;

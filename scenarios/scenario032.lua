@@ -14,7 +14,7 @@ local scenariodata = {
 
 Tips:
  - Try to use the air transport units to your advantage to quickly get your commander to the high ground.
- - Don't forget to reinforce the choke points with static defenses.
+ - Don't forget to reinforce the chokepoints with static defenses.
  - Early bombers can be used to delay the enemy getting too powerful.
  - Aircraft is weak to anti-air, switch to hovercraft when the enemy has too many anti-air units.
 
