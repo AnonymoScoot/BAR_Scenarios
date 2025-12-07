@@ -1,5 +1,5 @@
 local scenariodata = {
-	index             = 31,                                           --  integer, sort order, MUST BE EQUAL TO FILENAME NUMBER
+	index             = 33,                                           --  integer, sort order, MUST BE EQUAL TO FILENAME NUMBER
 	scenarioid        = "tickonly01",                                 -- no spaces, lowercase, this will be used to save the score and can be used gadget side
 	version           = "1",                                          -- increment this to reset the score when changing a mission, as scores are keyed by (scenarioid,version,difficulty)
 	title             = "Tick for Tack",                              -- can be anything

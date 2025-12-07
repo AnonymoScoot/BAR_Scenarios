@@ -1,5 +1,5 @@
 local scenariodata = {
-	index             = 31,                          --  integer, sort order, MUST BE EQUAL TO FILENAME NUMBER
+	index             = 36,                          --  integer, sort order, MUST BE EQUAL TO FILENAME NUMBER
 	scenarioid        = "nukerush01",                -- no spaces, lowercase, this will be used to save the score and can be used gadget side
 	version           = "1",                         -- increment this to reset the score when changing a mission, as scores are keyed by (scenarioid,version,difficulty)
 	title             = "Nuclear Age",               -- can be anything
@@ -403,7 +403,7 @@ The difficulty modifier will change the amount of resources you and the enemy re
 
 	scenariooptions   = {             -- this will get lua->json->base64 and passed to scenariooptions in game
 		myoption = "dostuff",         -- blank
-		scenarioid = "greatdividefriend01", -- this MUST be present and identical to the one defined at start
+		scenarioid = "nukerush01", -- this MUST be present and identical to the one defined at start
 		disablefactionpicker = true,  -- this is needed to prevent faction picking outside of the allowedsides
 
 		unitloadout = {
